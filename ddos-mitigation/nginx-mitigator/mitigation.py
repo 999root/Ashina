@@ -7,7 +7,7 @@ user_requests = {}
 timeout_duration = timedelta(seconds=60)  # Adjust timeout duration as needed
 
 async def handle_request(reader, writer):
-    data = await reader.read(1024)
+    data = await reader.read(4096)
     request_data = data.decode("utf-8")
 
     client_address = writer.get_extra_info('peername')[0]
